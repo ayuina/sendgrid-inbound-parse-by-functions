@@ -24,6 +24,12 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
         var body = await part.ReadAsStringAsync();
         log.Info(body);
     }
+
+    log.Info("--- Get specific part of body ---");
+    var fromPart = provider.Contents.First(c => c.Headers.ContentDisposition.Name == "\"from\"");
+    var from = await fromPart.ReadAsStringAsync();
+    log.Info($"Email from {from} has arrived.");
     
     return req.CreateResponse(HttpStatusCode.OK, "Received");
 }
+
