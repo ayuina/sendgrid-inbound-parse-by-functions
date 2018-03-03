@@ -17,7 +17,7 @@ If you want to specific part of email, query MultipartMemoryStreamProvider.Conte
 ### Some output example
 ```
 --- MultiPart Content ["from"] ---
-Content-Disposition: form-data; name="to"
+Content-Disposition: form-data; name="from"
 
 "user1@contoso.com" <user1@contoso.com>
 
